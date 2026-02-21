@@ -1,26 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brown-50: #fdf8f4;
+  --color-brown-100: #f9efe3;
+  --color-brown-200: #f0dcc2;
+  --color-brown-300: #e4c29a;
+  --color-brown-400: #d4a36d;
+  --color-brown-500: #c48847;
+  --color-brown-600: #b06f3a;
+  --color-brown-700: #925831;
+  --color-brown-800: #78482e;
+  --color-brown-900: #633c28;
+  --color-brown-950: #3a210f;
+  
+  --color-cream-50: #fdfbf7;
+  --color-cream-100: #faf5eb;
+  --color-cream-200: #f5ead3;
+  --color-cream-300: #eddab4;
+  --color-cream-400: #e5c78f;
+  --color-cream-500: #dcb46d;
+  --color-cream-600: #d39e52;
+  --color-cream-700: #b58241;
+  --color-cream-800: #956a3a;
+  --color-cream-900: #795634;
+  --color-cream-950: #47321d;
+  
+  --color-yellow-light: #fef3c0;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .btn-primary {
+    @apply bg-brown-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brown-700 transition-colors duration-200;
   }
-}
+  
+  .btn-secondary {
+    @apply bg-yellow-light text-brown-800 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors duration-200;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-brown-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brown-400 focus:border-transparent;
+  }
 }
